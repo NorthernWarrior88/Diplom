@@ -734,7 +734,16 @@ resource "yandex_compute_snapshot_schedule" "snapshot-diplom" {
 }
 ```
 
----  
+### 2.2 Запуск terraform playbook.
+```bash
+terraform-diplom apply
+```
+![изображение](https://github.com/user-attachments/assets/81c23d01-d2d9-4ba8-a635-75ce52e51342)
+
+
+---
+
+### 2.3 Проверка развернутых ресурсов в Yandex Cloud.
 
 
 ---
