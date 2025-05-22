@@ -4,12 +4,13 @@
 ```bash
 wget https://hashicorp-releases.yandexcloud.net/terraform/1.12.1/terraform_1.12.1_linux_amd64.zip
 
-zcat terraform_1.7.0_linux_amd64.zip > terraform-diplom
-chmod 744 terraform-diplom
-mv terraform-diplom /usr/local/bin/
-terraform-diplom -version
+unzip terraform_1.12.1_linux_amd64.zip
+chmod 744 terraform
+mv terraform /usr/local/bin/
+terraform -version
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/01.png)
+![изображение](https://github.com/user-attachments/assets/fbe22e3f-4d72-4cb0-9fb6-743ac247b6ff)
+
 Создаю файл `.terraformrc` и добавляю блок с источником, из которого будет устанавливаться провайдер.
 ```bash
 nano ~/.terraformrc
