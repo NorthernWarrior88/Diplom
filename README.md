@@ -75,7 +75,21 @@ terraform-diplom init
 ```
 ![изображение](https://github.com/user-attachments/assets/0ae59a28-7041-4037-8205-242c82620351)
 
-#### Terraform готов к использованию. Продолжение в основной части.
+ Настройка доступа к Yandex Cloud
+
+    curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
+    exec -l $SHELL
+    yc init
+Получил идентификаторы
+
+    yc config list | grep -E 'cloud-id|folder-id'
+
+
+![изображение](https://github.com/user-attachments/assets/7f34f022-42a5-4962-ae2b-1d752b33e052)
+
+
+  
+
 
 ---
 ### 1.2 Установка и подготовка Ansible.
