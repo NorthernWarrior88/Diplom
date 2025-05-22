@@ -104,7 +104,7 @@ terraform-diplom init
 
 [main.tf](main.tf.txt)
 
-[meta.yaml]
+[meta.yaml](meta.yaml)
 
 [.terraformrc]
 
