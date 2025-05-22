@@ -1,86 +1,90 @@
-#  Дипломная работа по профессии «Системный администратор»
-#### Выполнил: Яковлев Даниил Андреевич
-#### Группа: SYS-39
+## 1.0 Установка и подготовка Terraform и Ansible.
+### 1.1 Установка и подготовка Terraform.
+Скачиваю и распаковываю последнюю стабильную версию на 23.01.2024 с сайта: https://hashicorp-releases.yandexcloud.net/terraform/
+```bash
+wget https://hashicorp-releases.yandexcloud.net/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip
+zcat terraform_1.7.0_linux_amd64.zip > terraform-diplom
+chmod 744 terraform-diplom
+mv terraform-diplom /usr/local/bin/
+terraform-diplom -version
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/01.png)
+Создаю файл `.terraformrc` и добавляю блок с источником, из которого будет устанавливаться провайдер.
+```bash
+nano ~/.terraformrc
+```
+```terraform
+provider_installation {
+  network_mirror {
+    url = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/02.png)
+Для файла с метаданными, `meta.yaml`, необходим публичный SSH-ключ для доступа к ВМ. Для Yandex Cloud рекомендуется использовать алгоритм Ed25519: сгенерированные по нему ключи — самые безопасные. Ссылка: https://cloud.yandex.ru/ru/docs/glossary/ssh-keygen
+```bash
+ssh-keygen -t ed25519
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/03.png)
+Создаю файл `meta.yaml` с данными пользователя на создаваемые ВМ.
+```bash
+nano ~/meta.yaml
+```
+```terraform
+#cloud-config
+ users:
+  - name: tverdyakov
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-ed25519
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/04.png)
+Создаю `playbook Terraform` c блоком провайдера.
+```bash
+nano ~/main.tf
+```
+```terraform
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+}
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/05.png)
+Инициализирую провайдера.
+```bash
+terraform-diplom init
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/06.png)
+#### Terraform готов к использованию. Продолжение в основной части.
 
-<details>
-<summary>Задачи для выполнения дипломной работы</summary>
-  
-## Задача
-Ключевая задача — разработать отказоустойчивую инфраструктуру для сайта, включающую мониторинг, сбор логов и резервное копирование основных данных. Инфраструктура должна размещаться в [Yandex Cloud](https://cloud.yandex.com/) и отвечать минимальным стандартам безопасности: запрещается выкладывать токен от облака в git. Используйте [инструкцию](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart#get-credentials).
+---
+### 1.2 Установка и подготовка Ansible.
+Устанавливаю Ansible и проверяю версию.
+```bash
+apt install ansible
+ansible --version
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/07.png)
+Создаю полностью прокомментированный пример `ansible.cfg` и заменяю содержимое файла на необходимые опции. Файл прикреплю в основной части.
+```bash
+ansible-config init --disabled > ansible.cfg
+nano ~/ansible.cfg
+```
+![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/08.png)
+Создаю файл `hosts` и добавляю в него начальные данные. Файл прикреплю в основной части.
+```bash
+nano ~/hosts
+```
+#### Ansible готов к использованию. Продолжение в основной части.
 
-**Перед началом работы над дипломным заданием изучите [Инструкция по экономии облачных ресурсов](https://github.com/netology-code/devops-materials/blob/master/cloudwork.MD).**
-
-## Инфраструктура
-Для развёртки инфраструктуры используйте Terraform и Ansible.  
-
-Не используйте для ansible inventory ip-адреса! Вместо этого используйте fqdn имена виртуальных машин в зоне ".ru-central1.internal". Пример: example.ru-central1.internal  - для этого достаточно при создании ВМ указать name=example, hostname=examle !! 
-
-Важно: используйте по-возможности **минимальные конфигурации ВМ**:2 ядра 20% Intel ice lake, 2-4Гб памяти, 10hdd, прерываемая. 
-
-**Так как прерываемая ВМ проработает не больше 24ч, перед сдачей работы на проверку дипломному руководителю сделайте ваши ВМ постоянно работающими.**
-
-Ознакомьтесь со всеми пунктами из этой секции, не беритесь сразу выполнять задание, не дочитав до конца. Пункты взаимосвязаны и могут влиять друг на друга.
-
-### Сайт
-Создайте две ВМ в разных зонах, установите на них сервер nginx, если его там нет. ОС и содержимое ВМ должно быть идентичным, это будут наши веб-сервера.
-
-Используйте набор статичных файлов для сайта. Можно переиспользовать сайт из домашнего задания.
-
-Виртуальные машины не должны обладать внешним Ip-адресом, те находится во внутренней сети. Доступ к ВМ по ssh через бастион-сервер. Доступ к web-порту ВМ через балансировщик yandex cloud.
-
-Настройка балансировщика:
-
-1. Создайте [Target Group](https://cloud.yandex.com/docs/application-load-balancer/concepts/target-group), включите в неё две созданных ВМ.
-
-2. Создайте [Backend Group](https://cloud.yandex.com/docs/application-load-balancer/concepts/backend-group), настройте backends на target group, ранее созданную. Настройте healthcheck на корень (/) и порт 80, протокол HTTP.
-
-3. Создайте [HTTP router](https://cloud.yandex.com/docs/application-load-balancer/concepts/http-router). Путь укажите — /, backend group — созданную ранее.
-
-4. Создайте [Application load balancer](https://cloud.yandex.com/en/docs/application-load-balancer/) для распределения трафика на веб-сервера, созданные ранее. Укажите HTTP router, созданный ранее, задайте listener тип auto, порт 80.
-
-Протестируйте сайт
-`curl -v <публичный IP балансера>:80` 
-
-### Мониторинг
-Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix. 
-
-Настройте дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам. Добавьте необходимые tresholds на соответствующие графики.
-
-### Логи
-Cоздайте ВМ, разверните на ней Elasticsearch. Установите filebeat в ВМ к веб-серверам, настройте на отправку access.log, error.log nginx в Elasticsearch.
-
-Создайте ВМ, разверните на ней Kibana, сконфигурируйте соединение с Elasticsearch.
-
-### Сеть
-Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
-
-Настройте [Security Groups](https://cloud.yandex.com/docs/vpc/concepts/security-groups) соответствующих сервисов на входящий трафик только к нужным портам.
-
-Настройте ВМ с публичным адресом, в которой будет открыт только один порт — ssh.  Эта вм будет реализовывать концепцию  [bastion host]( https://cloud.yandex.ru/docs/tutorials/routing/bastion) . Синоним "bastion host" - "Jump host". Подключение  ansible к серверам web и Elasticsearch через данный bastion host можно сделать с помощью  [ProxyCommand](https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#network-delegate-to-vs-proxycommand) . Допускается установка и запуск ansible непосредственно на bastion host.(Этот вариант легче в настройке)
-
-Исходящий доступ в интернет для ВМ внутреннего контура через [NAT-шлюз](https://yandex.cloud/ru/docs/vpc/operations/create-nat-gateway).
-
-### Резервное копирование
-Создайте snapshot дисков всех ВМ. Ограничьте время жизни snaphot в неделю. Сами snaphot настройте на ежедневное копирование.
-
-### Дополнительно
-Не входит в минимальные требования. 
-
-1. Для Zabbix можно реализовать разделение компонент - frontend, server, database. Frontend отдельной ВМ поместите в публичную подсеть, назначте публичный IP. Server поместите в приватную подсеть, настройте security group на разрешение трафика между frontend и server. Для Database используйте [Yandex Managed Service for PostgreSQL](https://cloud.yandex.com/en-ru/services/managed-postgresql). Разверните кластер из двух нод с автоматическим failover.
-2. Вместо конкретных ВМ, которые входят в target group, можно создать [Instance Group](https://cloud.yandex.com/en/docs/compute/concepts/instance-groups/), для которой настройте следующие правила автоматического горизонтального масштабирования: минимальное количество ВМ на зону — 1, максимальный размер группы — 3.
-3. В Elasticsearch добавьте мониторинг логов самого себя, Kibana, Zabbix, через filebeat. Можно использовать logstash тоже.
-4. Воспользуйтесь Yandex Certificate Manager, выпустите сертификат для сайта, если есть доменное имя. Перенастройте работу балансера на HTTPS, при этом нацелен он будет на HTTP веб-серверов.
-
-## Выполнение работы
-На этом этапе вы непосредственно выполняете работу. При этом вы можете консультироваться с руководителем по поводу вопросов, требующих уточнения.
-
-⚠️ В случае недоступности ресурсов Elastic для скачивания рекомендуется разворачивать сервисы с помощью docker контейнеров, основанных на официальных образах.
-
-**Важно**: Ещё можно задавать вопросы по поводу того, как реализовать ту или иную функциональность. И руководитель определяет, правильно вы её реализовали или нет. Любые вопросы, которые не освещены в этом документе, стоит уточнять у руководителя. Если его требования и указания расходятся с указанными в этом документе, то приоритетны требования и указания руководителя.
-
-
-
-</details>
-
-#### Дипломная работа состоит из трех частей:
-
+[Ссылка на основную часть дипломной работы.](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/README.md)
+---
