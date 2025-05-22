@@ -36,6 +36,8 @@ ssh-keygen -t ed25519
 ```
 ![изображение](https://github.com/user-attachments/assets/4d2d611e-5d9a-4542-902e-af9bd72de964)
 
+
+
 Создаю файл `meta.yaml` с данными пользователя на создаваемые ВМ.
 ```bash
 nano ~/meta.yaml
@@ -50,7 +52,8 @@ nano ~/meta.yaml
     ssh-authorized-keys:
       - ssh-ed25519
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/04.png)
+![изображение](https://github.com/user-attachments/assets/00d4821e-6844-490f-8493-2466eaea3885)
+
 Создаю `playbook Terraform` c блоком провайдера.
 ```bash
 nano ~/main.tf
@@ -64,7 +67,8 @@ terraform {
   }
 }
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/05.png)
+![изображение](https://github.com/user-attachments/assets/90603707-e4e5-4bf8-a25f-532c447200b3)
+
 Инициализирую провайдера.
 ```bash
 terraform-diplom init
