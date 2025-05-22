@@ -73,7 +73,8 @@ terraform {
 ```bash
 terraform-diplom init
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/06.png)
+![изображение](https://github.com/user-attachments/assets/0ae59a28-7041-4037-8205-242c82620351)
+
 #### Terraform готов к использованию. Продолжение в основной части.
 
 ---
