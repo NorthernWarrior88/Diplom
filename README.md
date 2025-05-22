@@ -84,7 +84,8 @@ terraform-diplom init
 apt install ansible
 ansible --version
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/07.png)
+![изображение](https://github.com/user-attachments/assets/f4974bc7-56a2-4614-ae76-eb1c3a59b67c)
+
 Создаю полностью прокомментированный пример `ansible.cfg` и заменяю содержимое файла на необходимые опции. Файл прикреплю в основной части.
 ```bash
 ansible-config init --disabled > ansible.cfg
