@@ -1,5 +1,13 @@
+
 ## 1.0 Установка и подготовка Terraform и Ansible.
 ### 1.1 Установка и подготовка Terraform.
+
+[main.tf]
+
+[meta.yaml]
+
+[.terraformrc]
+
 Скачиваю и распаковываю последнюю стабильную версию на 22.05.2025 с сайта: https://hashicorp-releases.yandexcloud.net/terraform/
 ```bash
 wget https://hashicorp-releases.yandexcloud.net/terraform/1.12.1/terraform_1.12.1_linux_amd64.zip
