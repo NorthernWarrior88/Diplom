@@ -100,7 +100,7 @@ terraform-diplom init
 
 Ссылки на файлы terraform: 
 
-[main.tf]
+[main.tf](main.tf.txt)
 
 [meta.yaml]
 
