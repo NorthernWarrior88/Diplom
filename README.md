@@ -106,7 +106,7 @@ terraform-diplom init
 
 [meta.yaml](meta.yaml)
 
-[.terraformrc]
+[.terraformrc](terraformrc)
 
 
 
