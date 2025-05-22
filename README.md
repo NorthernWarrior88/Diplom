@@ -26,7 +26,9 @@ provider_installation {
   }
 }
 ```
-![изображение](https://github.com/user-attachments/assets/7e8cec8e-428b-4b0f-9228-968b449f3828)
+![изображение](https://github.com/user-attachments/assets/fc32a377-800a-42d5-a1cf-d09328f32036)
+
+
 
 Для файла с метаданными, `meta.yaml`, необходим публичный SSH-ключ для доступа к ВМ. Для Yandex Cloud рекомендуется использовать алгоритм Ed25519: сгенерированные по нему ключи — самые безопасные. Ссылка: https://cloud.yandex.ru/ru/docs/glossary/ssh-keygen
 ```bash
