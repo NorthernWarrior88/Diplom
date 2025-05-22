@@ -26,12 +26,14 @@ provider_installation {
   }
 }
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/02.png)
+![изображение](https://github.com/user-attachments/assets/7e8cec8e-428b-4b0f-9228-968b449f3828)
+
 Для файла с метаданными, `meta.yaml`, необходим публичный SSH-ключ для доступа к ВМ. Для Yandex Cloud рекомендуется использовать алгоритм Ed25519: сгенерированные по нему ключи — самые безопасные. Ссылка: https://cloud.yandex.ru/ru/docs/glossary/ssh-keygen
 ```bash
 ssh-keygen -t ed25519
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/03.png)
+![изображение](https://github.com/user-attachments/assets/4d2d611e-5d9a-4542-902e-af9bd72de964)
+
 Создаю файл `meta.yaml` с данными пользователя на создаваемые ВМ.
 ```bash
 nano ~/meta.yaml
