@@ -119,7 +119,30 @@ terraform-diplom apply
 
 ---
 
-### 2.3 Проверка развернутых ресурсов в Yandex Cloud.
+### 1.4 Проверка развернутых ресурсов в Yandex Cloud.
+
+![изображение](https://github.com/user-attachments/assets/e81709d5-8a3f-412a-a543-9c6fcbffc683)
+
+![изображение](https://github.com/user-attachments/assets/7eb6ea31-3506-4760-99ae-8e03cf19101b)
+
+![изображение](https://github.com/user-attachments/assets/0346a93c-fd78-4cab-82f6-0f5ab1e3137b)
+
+![изображение](https://github.com/user-attachments/assets/6531fbea-d1ef-4566-be4b-aa735f1fd791)
+
+![изображение](https://github.com/user-attachments/assets/8e5bcac4-d0db-4399-a220-49d7c0b28e06)
+
+![изображение](https://github.com/user-attachments/assets/416ea899-56aa-4945-832a-8cb66b62ff91)
+
+![изображение](https://github.com/user-attachments/assets/4bebf979-f5dd-4341-b0e7-72c477491e0b)
+
+![изображение](https://github.com/user-attachments/assets/16b86935-0b41-49bb-a2be-901cb323da09)
+
+![изображение](https://github.com/user-attachments/assets/d86b9f74-259d-4d15-8543-5d639b021855)
+
+
+
+
+
 
 
 ---
