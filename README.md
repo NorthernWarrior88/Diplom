@@ -125,6 +125,8 @@ terraform-diplom apply
 
 ![изображение](https://github.com/user-attachments/assets/7eb6ea31-3506-4760-99ae-8e03cf19101b)
 
+![изображение](https://github.com/user-attachments/assets/a79afaa4-a389-4037-83d4-971fed435f59)
+
 ![изображение](https://github.com/user-attachments/assets/0346a93c-fd78-4cab-82f6-0f5ab1e3137b)
 
 ![изображение](https://github.com/user-attachments/assets/6531fbea-d1ef-4566-be4b-aa735f1fd791)
