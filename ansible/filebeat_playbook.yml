@@ -1,0 +1,51 @@
+--
+- name: Install filebeat 
+  hosts: webserver-1.ru-central1.internal webserver-2.ru-central1.internal
+  become: yes
+  
+  vars_files: ./elk/vars.yml
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install gnupg, apt-transport-https
+      apt:
+        name:
+          - apt-transport-https
+          - gnupg
+        state: present
+
+    - name: Copy filebeat
+      copy:
+        src: "{{ elk_source }}/filebeat-{{ elk_version }}-amd64.deb"
+        dest: "{{ destination }}"
+
+    - name: Install filebeat # Установка filebeat
+      apt:
+        deb: "{{ destination }}/filebeat-{{ elk_version }}-amd64.deb"
+
+    - name: Copy config file for filebeat
+      copy:
+        src: ./elk/filebeat.yml
+        dest: /etc/filebeat
+        mode: 0600
+        owner: root
+        group: root
+
+    - name: Systemctl daemon reload filebeat 
+      systemd:
+        daemon_reload: true
+        name: filebeat.service
+        state: started
+
+    - name: Restarted nginx 
+      service:
+        name: nginx
+        state: restarted
+
+    - name: Restarted filebeat 
+      service:
+        name: filebeat.service
+        state: restarted
