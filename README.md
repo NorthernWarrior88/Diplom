@@ -88,5 +88,6 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 #### Ссылки на веб-ресурсы
 - [Zabbix логин Admin пароль zabbix](http://84.201.156.135/zabbix/zabbix.php?action=dashboard.view)
+- [веб-сервера(балансировкщик)](http://84.201.156.135/zabbix/zabbix.php?action=dashboard.view)
 
 
