@@ -84,4 +84,6 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 #### Основная часть дипломной работы с описанием выполения и скриншотами
 
+- [Основная часть](https://github.com/NorthernWarrior88/Diplom/tree/1.-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-Terraform-%D0%B8-Ansible)
+
 
