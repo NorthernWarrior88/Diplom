@@ -1,0 +1,46 @@
+---
+- name: Install elasticsearch 
+  hosts: elasticsearch.ru-central1.internal
+  become: yes
+  
+  vars_files: ./elk/vars.yml
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install gnupg, apt-transport-https 
+      apt:
+        name:
+          - apt-transport-https
+          - gnupg
+        state: present
+
+    - name: Copy elasticsearch 
+      copy:
+        src: "{{ elk_source }}/elasticsearch-{{ elk_version }}-amd64.deb"
+        dest: "{{ destination }}"
+
+    - name: Install elasticsearch 
+      apt:
+        deb: "{{ destination }}/elasticsearch-{{ elk_version }}-amd64.deb"
+
+    - name: Copy config file for elasticsearch 
+      copy:
+        src: ./elk/elasticsearch.yml
+        dest: /etc/elasticsearch
+        mode: 0660
+        owner: root
+        group: elasticsearch
+
+    - name: Systemctl daemon reload
+      systemd:
+        daemon_reload: true
+        name: elasticsearch.service
+        state: started
+
+    - name: Systemctl enable elasticsearch
+      systemd:
+        name: elasticsearch.service
+        state: restarted
