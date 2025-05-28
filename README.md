@@ -153,14 +153,35 @@ ansible --version
 ```
 ![изображение](https://github.com/user-attachments/assets/f4974bc7-56a2-4614-ae76-eb1c3a59b67c)
 
-Создаю полностью прокомментированный пример `ansible.cfg` и заменяю содержимое файла на необходимые опции. Файл прикреплю в основной части.
-```bash
-ansible-config init --disabled > ansible.cfg
-nano ~/ansible.cfg
-```
+Скачиваем установочные пакеты elasticsearch, filebeat, kibana из ресурса Yandex зеркало/
 
-```
-#### Ansible готов к использованию. Продолжение в основной части.
+Конфигурируем файл /ansible.cfg в дериктории /etc/ansible
 
-[Ссылка на основную часть дипломной работы.](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/README.md)
+Пингуем машины из списка hosts
+
+ansible all -m ping
+
+![ansible ping](https://github.com/user-attachments/assets/9212d0b4-1fbf-4704-91ec-817a671a4580)
+
+Установка модулей через ansible:
+
+playbook1.yml
+
+![playbook1](https://github.com/user-attachments/assets/b1f1d1c5-7bea-48b2-8869-b2770f8450e0)
+
+
+Kibana
+
+![kibana](https://github.com/user-attachments/assets/0b7496c2-1f87-4ca7-adc0-826c51060077)
+
+
+Elasticsearch
+
+Zabbix
+
+Zabbix-agent  
+
+2 webserver
+
+filebeat
 ---
