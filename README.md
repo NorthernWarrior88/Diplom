@@ -124,6 +124,18 @@ terraform-diplom apply
 
 
 
+Группа безопасности
+
+![изображение](https://github.com/user-attachments/assets/37892075-f883-43e2-897c-defe0fe94d6e)
+
+Шлюз
+
+![изображение](https://github.com/user-attachments/assets/7a84211d-3b4f-4edc-9311-51b2f0090bf8)
+
+
+
+
+
 ---
 
 ### 1.4 Проверка развернутых ресурсов в Yandex Cloud.
