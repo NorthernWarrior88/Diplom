@@ -195,6 +195,16 @@ filebeat
 ---
 ### 1.6 Проверка веб-интерфейсов ресурсов
 
+Балансировщик
+
+![вход на сайт](https://github.com/user-attachments/assets/7d0a1f92-7a42-488b-bc36-ee37c0020fa6)
+
+
+А на этом скрине видно, что работает балансировщик. Подсветил фон страницы на втором веб-сервере
+
+![вход на сайт2](https://github.com/user-attachments/assets/2c2d034d-8333-40d5-97fb-9e5f77bbdf96)
+
+
 Elasticsearch
 
 ![kibana_syte](https://github.com/user-attachments/assets/56e7c835-3d47-4efc-ac4c-4d4972fd6746)
