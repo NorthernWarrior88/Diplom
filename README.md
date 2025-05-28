@@ -193,3 +193,33 @@ filebeat
 
 
 ---
+### 1.6 Проверка веб-интерфейсов ресурсов
+
+Elasticsearch
+
+![kibana_syte](https://github.com/user-attachments/assets/56e7c835-3d47-4efc-ac4c-4d4972fd6746)
+
+
+![изображение](https://github.com/user-attachments/assets/b5f69a8f-f94a-4a5a-a2c6-d29f8efad94c)
+
+
+
+Zabbix-fronted 
+
+![fronted_zabbix](https://github.com/user-attachments/assets/ca27ff33-f900-45cd-8386-8e27586fa670)
+
+Zabbix с подключенными VM
+
+
+![zabbix_agent3](https://github.com/user-attachments/assets/5178d4f5-c30b-4c4c-8640-89adfdf110d2)
+
+
+![zabbix_agent2](https://github.com/user-attachments/assets/2fc23fcc-61a7-4f37-b2b2-6f73ab29a37d)
+
+
+
+
+
+
+
+
