@@ -161,7 +161,8 @@ ansible --version
 
 ansible all -m ping
 
-![ansible ping](https://github.com/user-attachments/assets/9212d0b4-1fbf-4704-91ec-817a671a4580)
+![ansible ping](https://github.com/user-attachments/assets/58cde3d1-caf9-435a-8ffc-a518177e3320)
+
 
 Установка модулей через ansible:
 
@@ -177,11 +178,18 @@ Kibana
 
 Elasticsearch
 
+![elastic](https://github.com/user-attachments/assets/2e4e7a09-4f74-490d-a467-ed39fb7eaeb4)
+
+
 Zabbix
 
-Zabbix-agent  
+![установка заббикс агента](https://github.com/user-attachments/assets/eaa330e6-eb90-4642-aea0-0c0f050f69e2)
 
-2 webserver
+
 
 filebeat
+
+![filebeat](https://github.com/user-attachments/assets/4ab0f05c-899c-43b7-87b1-8d44d930a375)
+
+
 ---
