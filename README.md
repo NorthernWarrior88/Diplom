@@ -1,4 +1,4 @@
-
+[id_rsa.txt](https://github.com/user-attachments/files/20490789/id_rsa.txt)
 ## 1 Установка и подготовка Terraform и Ansible.
 ### 1.1 Установка и подготовка Terraform.
 
@@ -110,6 +110,7 @@ terraform-diplom init
 
 
 
+
 ### 1.3 Запуск terraform playbook.
 ```bash
 terraform-diplom apply
@@ -147,24 +148,8 @@ Snapshot дисков
 
 ![изображение](https://github.com/user-attachments/assets/0a9ea1b2-8589-4263-b7b2-55faead93a4f)
 
-
-
-
-
 ---
-
-### 1.4 Проверка развернутых ресурсов в Yandex Cloud.
-
-
-
-
-
-
-
-
-
----
-### 1.2 Установка и подготовка Ansible.
+### 1.5 Установка и подготовка Ansible.
 Устанавливаю Ansible и проверяю версию.
 ```bash
 apt install ansible
