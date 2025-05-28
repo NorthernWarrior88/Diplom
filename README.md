@@ -114,32 +114,21 @@ terraform-diplom init
 ```bash
 terraform-diplom apply
 ```
-![изображение](https://github.com/user-attachments/assets/81c23d01-d2d9-4ba8-a635-75ce52e51342)
+Обший вид
+
+![изображение](https://github.com/user-attachments/assets/b04989d0-feec-4fc0-a6c5-744b8df036a1)
+
+Сеть
+
+![изображение](https://github.com/user-attachments/assets/4071e232-11db-4956-a25e-1103c650e69c)
+
 
 
 ---
 
 ### 1.4 Проверка развернутых ресурсов в Yandex Cloud.
 
-![изображение](https://github.com/user-attachments/assets/e81709d5-8a3f-412a-a543-9c6fcbffc683)
 
-![изображение](https://github.com/user-attachments/assets/7eb6ea31-3506-4760-99ae-8e03cf19101b)
-
-![изображение](https://github.com/user-attachments/assets/a79afaa4-a389-4037-83d4-971fed435f59)
-
-![изображение](https://github.com/user-attachments/assets/0346a93c-fd78-4cab-82f6-0f5ab1e3137b)
-
-![изображение](https://github.com/user-attachments/assets/6531fbea-d1ef-4566-be4b-aa735f1fd791)
-
-![изображение](https://github.com/user-attachments/assets/8e5bcac4-d0db-4399-a220-49d7c0b28e06)
-
-![изображение](https://github.com/user-attachments/assets/416ea899-56aa-4945-832a-8cb66b62ff91)
-
-![изображение](https://github.com/user-attachments/assets/4bebf979-f5dd-4341-b0e7-72c477491e0b)
-
-![изображение](https://github.com/user-attachments/assets/16b86935-0b41-49bb-a2be-901cb323da09)
-
-![изображение](https://github.com/user-attachments/assets/d86b9f74-259d-4d15-8543-5d639b021855)
 
 
 
