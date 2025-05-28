@@ -100,13 +100,9 @@ terraform-diplom init
 
 Вся необходимая информация по разным задачам дипломного проекта на ходится в конфигах!
 
-Ссылки на файлы terraform: 
+Файлы terraform представлены в папке  
 
-[main.tf](main.tf.txt)
 
-[meta.yaml](meta.yaml)
-
-[.terraformrc](terraformrc)
 
 
 
