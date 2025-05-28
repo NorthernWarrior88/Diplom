@@ -48,7 +48,7 @@ nano ~/meta.yaml
 ```terraform
 #cloud-config
  users:
-  - name: tverdyakov
+  - name: user
     groups: sudo
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
