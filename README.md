@@ -100,7 +100,7 @@ terraform-diplom init
 
 Вся необходимая информация по разным задачам дипломного проекта на ходится в конфигах!
 
-Файлы terraform представлены в папке:terraform 
+Конфиги terraform представлены в папке:terraform 
 
 
 
@@ -143,6 +143,9 @@ Snapshot дисков
 
 ---
 ### 1.5 Установка и подготовка Ansible.
+
+Конфиги и плейбуки ansible представлены в папке:ansible
+
 Устанавливаю Ansible и проверяю версию.
 ```bash
 apt install ansible
@@ -155,10 +158,7 @@ ansible --version
 ansible-config init --disabled > ansible.cfg
 nano ~/ansible.cfg
 ```
-![](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/01_Установка%20и%20подготовка%20Terraform%20и%20Ansible/screenshots/08.png)
-Создаю файл `hosts` и добавляю в него начальные данные. Файл прикреплю в основной части.
-```bash
-nano ~/hosts
+
 ```
 #### Ansible готов к использованию. Продолжение в основной части.
 
