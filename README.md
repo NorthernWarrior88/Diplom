@@ -114,7 +114,13 @@ terraform-diplom init
 ```bash
 terraform-diplom apply
 ```
-Обший вид
+
+![curl](https://github.com/user-attachments/assets/217f4a99-0b5d-4263-b34b-b3e0398507d6)
+
+
+### 1.4 Проверка развернутых ресурсов в Yandex Cloud.
+
+Общий вид
 
 ![изображение](https://github.com/user-attachments/assets/b04989d0-feec-4fc0-a6c5-744b8df036a1)
 
@@ -131,6 +137,15 @@ terraform-diplom apply
 Шлюз
 
 ![изображение](https://github.com/user-attachments/assets/7a84211d-3b4f-4edc-9311-51b2f0090bf8)
+
+Балансировщик
+
+![изображение](https://github.com/user-attachments/assets/d8149d40-e5af-4775-8927-c212ef73d02d)
+
+
+Snapshot дисков
+
+![изображение](https://github.com/user-attachments/assets/0a9ea1b2-8589-4263-b7b2-55faead93a4f)
 
 
 
