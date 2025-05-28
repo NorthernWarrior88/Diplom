@@ -1,4 +1,4 @@
-[id_rsa.txt](https://github.com/user-attachments/files/20490789/id_rsa.txt)
+
 ## 1 Установка и подготовка Terraform и Ansible.
 ### 1.1 Установка и подготовка Terraform.
 
