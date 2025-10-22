@@ -86,7 +86,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 - [Основная часть](https://github.com/NorthernWarrior88/Diplom/tree/1.-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-Terraform-%D0%B8-Ansible)
 
-#### Ссылки на веб-ресурсы
+#### Ссылки на веб-ресурсы (На данный момент не актуальны, так как удалены с ЯО)
 - [Zabbix логин Admin пароль zabbix](http://84.201.156.135/zabbix/zabbix.php?action=dashboard.view)
 - [веб-сервера(балансировкщик)](http://158.160.185.212/)
 - [ELK](http://89.169.143.199:5601/app/management/kibana/indexPatterns/patterns/fcf0a430-3b10-11f0-8d78-ebf0c90ad621#/?_a=(tab:indexedFields))
